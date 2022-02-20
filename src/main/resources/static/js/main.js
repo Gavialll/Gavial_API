@@ -14,7 +14,7 @@ function GET(url, headers = {
     })
 }
 
-let url = '/api/exchange';
+let url = 'http://gavialapi.herokuapp.com/api/exchange';
 
 let first = [];
 let second = [];
@@ -86,8 +86,8 @@ let right = document.getElementById("right");
 let left = document.getElementById("left");
 
 right.addEventListener('click', function(event){
-    document.location.href = "/exchange/getExchange";
+    document.location.href = "http://gavialapi.herokuapp.com/exchange/getExchange";
 })
 left.addEventListener('click', function(event){
-    document.location.href = "/exchange/getHistory";
+    document.location.href = "http://gavialapi.herokuapp.com/exchange/getHistory";
 })
