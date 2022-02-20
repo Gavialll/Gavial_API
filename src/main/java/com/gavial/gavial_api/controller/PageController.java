@@ -10,6 +10,12 @@ public class PageController {
     public String index(){
         return "PWA/exchange/exchange";
     }
+
+    @GetMapping("/")
+    public String indexs(){
+        return "PWA/exchange/exchange";
+    }
+
     @GetMapping("/exchange/getHistory")
     public String indexe(){
         return "PWA/exchange/history";
