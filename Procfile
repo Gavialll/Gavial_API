@@ -1,1 +1,1 @@
-web: java -Dserver.port=5000 $JAVA_OPTS -jar target/gavial_api-0.0.1-SNAPSHOT.war
+web: java -Dserver.port=5002 $JAVA_OPTS -jar target/gavial_api-0.0.1-SNAPSHOT.war
