@@ -20,4 +20,10 @@ public class PageController {
     public String indexe(){
         return "PWA/exchange/history";
     }
+
+
+    @GetMapping("/eee")
+    public String indexess(){
+        return "dc";
+    }
 }
