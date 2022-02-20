@@ -1,0 +1,17 @@
+
+
+{
+    "name": "Exchange",
+    "lang": "en-us",
+    "short_name": "Exchange",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "../image/play.svg",
+            "sizes": "512x512"
+        }
+    ]
+}
