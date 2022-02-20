@@ -1,1 +1,1 @@
-web: java -jar target/Gavial_API.war
+web: java -jar target/Gavial_API.jar
