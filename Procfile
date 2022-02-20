@@ -1,1 +1,2 @@
-web: java -Dserver.port=5001 $JAVA_OPTS -jar target/Gavial_API-0.0.1-SNAPSHOT.jar
+
+web: java -Dserver.port=$PORT -jar target/Gavial_API-0.0.1-SNAPSHOT.jar
