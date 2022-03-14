@@ -1,3 +1,4 @@
+document.addEventListener("touchstart", function() {},false);
 
 let word = document.getElementById("word");
 let sentence = document.getElementById("sentence");
