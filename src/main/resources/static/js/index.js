@@ -4,10 +4,10 @@ let sentence = document.getElementById("sentence");
 let user = document.getElementById("user");
 
 word.addEventListener('click', function(event){
-    window.open('https://gavialapi.herokuapp.com/word');
+    window.location.href = 'https://gavialapi.herokuapp.com/word';
 })
 sentence.addEventListener('click', function(event){
-    window.open("https://gavialapi.herokuapp.com/sentence");
+    window.location.href = "https://gavialapi.herokuapp.com/sentence";
 })
 
 
