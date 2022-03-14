@@ -57,7 +57,7 @@ div[class = 'search']>input{
 .element:focus{
     box-shadow: 0 0 5px 1px #286c7d;
 }
-.element:active{
+.element:target{
     box-shadow: 0 0 5px 1px #286c7d;
 }
 /*.element:hover{*/
@@ -103,6 +103,6 @@ button{
     background-color: #1c1d1e;
 }
 
-button:active{
+button:target{
     box-shadow: 0 0 5px 1px #286c7d;
 }
