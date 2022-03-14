@@ -11,6 +11,11 @@ public class PageController {
         return "index";
     }
 
+    @GetMapping("/index")
+    public String indexx(){
+        return "index";
+    }
+
     @GetMapping("/sentence")
     public String sentence(){
         return "sentence";
