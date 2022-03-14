@@ -6,18 +6,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
-    @GetMapping("/exchange/getExchange")
-    public String index(){
-        return "exchange";
-    }
-
     @GetMapping("/")
-    public String indexs(){
+    public String index(){
         return "index";
     }
 
-    @GetMapping("/exchange/getHistory")
-    public String indexe(){
-        return "history";
+    @GetMapping("/sentence")
+    public String sentence(){
+        return "sentence";
+    }
+
+    @GetMapping("/word")
+    public String word(){
+        return "word";
     }
 }

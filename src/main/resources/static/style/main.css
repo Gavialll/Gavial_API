@@ -1,135 +1,33 @@
 
-
-
-
-
-.size{
-    width: 34%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: sans-serif;
-    color: rgb(219, 218, 218);
+button{
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
 }
-.cen{
-    width: 23%;
-    height: 100%;
-    
-}
-
 .logo{
-    width: 100%;
-    font-size: 40px;
-    font-family: sans-serif;
-    font-weight: 900;
     text-align: center;
-    color: rgb(219, 218, 218);
+    color: #969faa;
+    font-size: 2.5em;
 }
 
-p, li, h2{
-    color: rgb(175, 175, 175);
-}
-
-main {
-    width: 90%;
-    margin: auto;
+button{
     margin-top: 20px;
-}
-
-.element {
-    width: 100%;
-    height: 51px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.side {
-    width: 34%;
-    height: 100%;
-    box-shadow: 0 -5px 10px 0 rgb(0 0 0 / 20%);
+    height: 50px;
+    color: #969faa;
     border-radius: 10px;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 31%, rgba(19,19,19,1) 67%);
-    color: rgb(219, 218, 218);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: sans-serif;
+    padding: 2px;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+    background-color: #1C1D1E;
 }
-.center {
-    width: 23%;
-    height: 100%;
-    box-shadow: 0 -5px 10px 0 rgb(0 0 0 / 20%);
-    border-radius: 10px;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 31%, rgba(19,19,19,1) 67%);   
-    color: rgb(219, 218, 218);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: sans-serif;
-}
-
-.more{
-    box-shadow: 0 -5px 10px 0 rgb(0 0 0 / 20%);
-    border-radius: 10px;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 31%, rgba(19,19,19,1) 67%);
-    width: 100%;
-    height: 51px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    color: rgb(219, 218, 218);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: sans-serif;
-    border: 0;
-}
-.more:active{
+button:active{
     box-shadow: 0 0 5px 1px #286c7d;
 }
 
-.date{
-    box-shadow: 0 -5px 10px 0 rgb(0 0 0 / 20%);
-    border-radius: 10px;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 31%, rgba(19,19,19,1) 67%);
-    width: 100%;
-    height: 51px;
+main{
+    width: 90%;
+    margin: 20px auto auto;
     display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    color: rgb(219, 218, 218);
-    border: 0;
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: sans-serif;
+    justify-content: center;
+    flex-direction: column;
 }
-.date:focus{
-    box-shadow: 0 0 5px 1px #286c7d;
-    outline: 0;
-    border: 0;
-    
-}
-
-::-webkit-calendar-picker-indicator {
-    color: transparent;
-    opacity: 1;
-    background: url(../image/angle-down.svg) no-repeat center;
-    background-size: contain;
-  }

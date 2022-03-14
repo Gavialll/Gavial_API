@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style/screen.css}" href="../static/style/screen.css">
+    <link rel="stylesheet" th:href="@{/style/sentence.css}" href="../static/style/sentence.css">
+    <link rel="manifest" th:href="@{/manifest.webmanifest}">
+</head>
+
+<body>
+<main>
+    <div class="search">
+        <img src="../static/image/search.svg" th:src="@{/image/search.svg}">
+        <input placeholder="Search" type="text">
+    </div>
+    <div class="element_wrapper">
+        <div class="element">
+            <div class="element_name">WHERE WERE YOUR PARENTS LAST SUMMER</div>
+            <div class="element_button">
+                <img src="../static/image/delete_red.svg" th:src="@{/image/delete_red.svg}">
+                <img src="../static/image/edit.svg" th:src="@{/image/edit.svg}">
+            </div>
+        </div>
+        <div class="element">
+            <div class="element_name">TAKE PHOTOS</div>
+            <div class="element_button">
+                <img src="../static/image/delete_red.svg" th:src="@{/image/delete_red.svg}">
+                <img src="../static/image/edit.svg" th:src="@{/image/edit.svg}">
+            </div>
+        </div>
+        <div class="element">
+            <div class="element_name">THIS PHONE IS RED</div>
+            <!--                <div class="element_button">-->
+            <!--                    <img src="../static/image/delete_red.svg" th:src="@{/image/delete_red.svg}">-->
+            <!--                    <img src="../static/image/edit.svg" th:src="@{/image/edit.svg}">-->
+            <!--                </div>-->
+        </div>
+    </div>
+</main>
+    <header>
+        <div class="menu">
+            <img id="home" src="../static/image/home.svg" th:src="@{/image/home.svg}" alt="">
+            <img id="add" src="../static/image/plus.svg" th:src="@{/image/plus.svg}" alt="">
+            <!--            <img id="myWord" src="../static/image/edit.svg" th:src="@{/image/edit.svg}" alt="">-->
+            <img id="setting" src="../static/image/setting.svg" th:src="@{/image/setting.svg}" alt="">
+        </div>
+    </header>
+    <script th:src="@{/js/sentence.js}" src="../static/js/sentence.js"></script>
+    <script th:src="@{/js/menu.js}" src="../static/js/menu.js"></script>
+</body>
+</html>

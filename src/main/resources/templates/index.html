@@ -5,24 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/screen.css">
-    <link rel="stylesheet" href="../style/main.css">
-    <link rel="manifest" href="../manifest.webmanifest">
+    <link rel="stylesheet" th:href="@{/style/screen.css}" href="../static/style/screen.css">
+    <link rel="stylesheet" th:href="@{/style/main.css}" href="../static/style/main.css">
+    <link rel="manifest" th:href="@{/manifest.webmanifest}">
 </head>
 
 <body>
-   <main>
-       <p>Index</p>
+    <main>
+        <span class="logo">Control panel<br>for<br>"Telegram Bot"</span>
+        <button id="word">Word edit</button>
+        <button id="sentence">Sentence edit</button>
+        <button id="user">Send all user</button>
     </main>
     <header>
         <div class="menu">
-            <img id="left" src="../image/angle-left-b.svg" alt="">
-            <img id="translate" src="../image/plus.svg" alt="">
-            <img id="myWord" src="../image/play.svg" alt="">
-            <img id="right" src="../image/angle-right-b.svg" alt="">
+            <img id="home" src="../static/image/home.svg" th:src="@{/image/home.svg}" alt="">
+<!--            <img id="add" src="../static/image/plus.svg" th:src="@{/image/plus.svg}" alt="">-->
+<!--            <img id="myWord" src="../static/image/edit.svg" th:src="@{/image/edit.svg}" alt="">-->
+            <img id="setting" src="../static/image/setting.svg" th:src="@{/image/setting.svg}" alt="">
         </div>
     </header>
-    <script src="../js/main.js"></script>
+    <script th:src="@{/js/index.js}" src="../static/js/index.js"></script>
+    <script th:src="@{/js/menu.js}" src="../static/js/menu.js"></script>
 </body>
-
 </html>

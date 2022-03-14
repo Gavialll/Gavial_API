@@ -1,0 +1,111 @@
+*{
+    font-family: fantasy;
+    color: #969faa;
+}
+
+input[type=text]:focus {
+    background: none;
+    border: none;
+    box-shadow: 0 0 5px 1px #286c7d;
+}
+
+input[type=text] {
+    outline:none;
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.search{
+    position: relative;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+div[class = 'search']>img{
+    height: 60%;
+    position: absolute;
+    right: 6px;
+    top: 10px;
+}
+
+div[class = 'search']>input{
+    border-radius: 4px;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+}
+
+.element_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.element{
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #24414D;
+    border-radius: 4px;
+    display: flex;
+    height: max-content;
+     min-height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+}
+.element:focus{
+    box-shadow: 0 0 5px 1px #286c7d;
+}
+.element:active{
+    box-shadow: 0 0 5px 1px #286c7d;
+}
+/*.element:hover{*/
+/*    box-shadow: 0 0 5px 1px #286c7d;*/
+/*}*/
+
+.element_button{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.element_name{
+    width: 100%;
+    font-size: 15px;
+    height: max-content;
+}
+
+div[class = 'element_button']>img{
+    width: 20px;
+    height: 20px;
+}
+
+main{
+    width: 90%;
+    margin: 20px auto auto;
+}
+
+button{
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+}
+
+button{
+    margin-top: 20px;
+    height: 50px;
+    color: #969faa;
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+    background-color: #1c1d1e;
+}
+
+button:active{
+    box-shadow: 0 0 5px 1px #286c7d;
+}
