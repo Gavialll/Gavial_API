@@ -1,16 +1,16 @@
 
 
 {
-    "name": "Exchange",
+    "name": "English",
     "lang": "en-us",
-    "short_name": "Exchange",
+    "short_name": "English",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
     "orientation": "any",
     "icons": [
         {
-            "src": "../image/play.svg",
+            "src": "/image/user.svg",
             "sizes": "512x512"
         }
     ]

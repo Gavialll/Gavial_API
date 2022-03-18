@@ -25,4 +25,10 @@ public class PageController {
     public String word(){
         return "word";
     }
+
+    @GetMapping("/user")
+    public String user(){
+        return "user";
+    }
+
 }
