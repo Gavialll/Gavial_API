@@ -1,15 +1,18 @@
+import {address} from "./module.js";
+
 document.addEventListener("touchstart", function() {},false);
 
-let word = document.getElementById("word");
-let sentence = document.getElementById("sentence");
-let user = document.getElementById("user");
-
-word.addEventListener('click', function(event){
-    window.location.href = 'https://gavialapi.herokuapp.com/word';
-})
-sentence.addEventListener('click', function(event){
-    window.location.href = "https://gavialapi.herokuapp.com/sentence";
-})
+// let word = document.getElementById("word");
+// let sentence = document.getElementById("sentence");
+// let user = document.getElementById("user");
+//
+//
+// word.addEventListener('click', function(event){
+//     window.location.href = address('/word');
+// })
+// sentence.addEventListener('click', function(event){
+//     window.location.href = address('/sentence')
+// })
 
 
 // let more = document.getElementById("more");

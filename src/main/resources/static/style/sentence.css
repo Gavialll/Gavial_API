@@ -1,20 +1,78 @@
+body{
+    position: relative;
+}
+#closeAlert{
+    top: -20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(71, 82, 94, 0.57);
+}
+#adminAlert{
+    z-index: 1;
+    display: none;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.alertBackground{
+    z-index: 1;
+    position: absolute;
+    top: auto;
+    left: auto;
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1C1D1E;
+    border-radius: 10px;
+    width: 80%;
+    height: max-content;
+    max-height: 75vh;
+}
+div[class = 'alertBackground']>textarea{
+    resize: none;
+    border-radius: 10px;
+    outline:none;
+    background: #1C1D1E;
+    border: solid 2px #286c7d;
+    padding: 10px;
+    font-size: 20px;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+    margin-top: 5px;
+    height: 80px;
 
-input[type=text]:focus {
-    background: none;
-    border: none;
+}
+div[class = 'alertBackground']>textarea:focus {
+    background: #1C1D1E;
     box-shadow: 0 0 5px 1px #286c7d;
+    border: solid 2px #286c7d;
+}
+div[class = 'alertBackground']>h3{
+    margin-top: 20px;
 }
 
-input[type=text] {
+#search {
+    border-radius: 10px;
     outline:none;
-    background: none;
+    background: #1C1D1E;
     border: none;
     width: 100%;
     padding: 10px;
     font-size: 20px;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+}
+#search:focus{
+    background: #1C1D1E;
+    border: none;
+    box-shadow: 0 0 5px 1px #286c7d;
 }
 
 .search{
+    border-radius: 10px;
     position: relative;
     height: max-content;
     display: flex;
@@ -29,47 +87,23 @@ div[class = 'search']>img{
     top: 10px;
 }
 
-div[class = 'search']>input{
-    border-radius: 4px;
-    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
-}
-
-.element_wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
 .element{
-    padding: 5px;
+    padding: 0px 10px 10px 15px;
     margin-bottom: 10px;
-    width: 100%;
-    background-color: #24414D;
-    border-radius: 4px;
-    display: flex;
+    background-color: #1C1D1E;
+    border-radius: 10px;
     height: max-content;
-     min-height: 50px;
-    justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
-}
-.element:focus{
-    box-shadow: 0 0 5px 1px #286c7d;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 .element:active{
     box-shadow: 0 0 5px 1px #286c7d;
 }
-/*.element:hover{*/
-/*    box-shadow: 0 0 5px 1px #286c7d;*/
-/*}*/
-
-.element_button{
-    width: max-content;
-    display: flex;
-    flex-direction: column;
-}
-
 .element_name{
+    margin-top: 10px;
     width: 100%;
     font-size: 15px;
     height: max-content;
@@ -84,10 +118,16 @@ main{
     width: 90%;
     margin: 20px auto auto;
 }
+.wrrapperButton{
+    display: flex;
+    justify-content: space-between;
+}
+div[class = 'wrrapperButton']>button{
+    width: 47%;
+}
 
 button{
     padding: 0;
-    border: none;
     font: inherit;
     color: inherit;
 }
@@ -100,6 +140,7 @@ button{
     padding: 2px;
     box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
     background-color: #1c1d1e;
+    border: solid 2px #286c7d;
 }
 
 button:active{

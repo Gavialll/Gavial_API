@@ -6,41 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/style/screen.css}" href="../static/style/screen.css">
-    <link rel="stylesheet" th:href="@{/style/word.css}" href="../static/style/word.css">
+    <link rel="stylesheet" th:href="@{/style/user.css}" href="../static/style/user.css">
     <link rel="manifest" th:href="@{/manifest.webmanifest}">
 </head>
 
-<body id="body">
+<body>
     <div id="adminAlert">
         <div id="closeAlert"></div>
         <div class="alertBackground">
-            <h3 style="text-align: center">Edit</h3>
-            <h3>English</h3>
-            <input type="text" id="english">
-            <h3>Ukraine</h3>
-            <input type="text" id="ukraine">
-            <button style="color: red" id="delete">Delete</button>
-            <div class="wrrapperButton">
-                <button style="color: red" id="cancel">Cancel</button>
-                <button style="color: green" id="save">Save</button>
-            </div>
+            <div id="word">Edit word</div>
+            <div id="sentence">Edit sentence</div>
+            <div id="irregularVerb">Edit irregular verb</div>
         </div>
     </div>
+
     <main>
-        <div class="search">
-            <img src="../static/image/search.svg" th:src="@{/image/search.svg}" alt="">
-            <input id="search" placeholder="Search" type="text">
-        </div>
-        <div class="element_wrapper">
-            <div id="first" class="element">
-                <div class="element_name">Responsible</div>
-                <div class="element_name">Відповідальний</div>
-            </div>
-            <div id="second" class="element">
-                <div class="element_name">Who</div>
-                <div class="element_name">Коли</div>
+        <div class="userWrapper">
+            <img class="photoUser" src="../static/image/user.svg">
+            <div class="wrapperInfo">
+                <h2 class="userName">Andrii</h2>
+                <p class="info">Words: 256</p>
+                <p class="info">Sentence: 328</p>
+                <p class="info">Irregular verb: 124</p>
             </div>
         </div>
+        <div class="userMenu">
+            <img  alt="no">
+            <img  alt="no">
+            <img  alt="no">
+            <img id="adminPanel" src="../static/image/user-plus.svg" th:src="@{/image/user-plus.svg}" alt="">
+        </div>
+
     </main>
     <header>
         <div class="menu">
@@ -51,7 +47,7 @@
         </div>
     </header>
     <script type="module" th:src="@{/js/module.js}" src="../static/js/module.js"></script>
-    <script type="module" th:src="@{/js/word.js}" src="../static/js/word.js"></script>
+    <script type="module" th:src="@{/js/user.js}" src="../static/js/user.js"></script>
     <script type="module" th:src="@{/js/menu.js}" src="../static/js/menu.js"></script>
 </body>
 </html>
