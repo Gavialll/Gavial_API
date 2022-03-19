@@ -1,13 +1,28 @@
 body{
     position: relative;
+    padding-bottom: 55px;
 }
 #closeAlert{
     top: -20px;
     left: 0;
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(71, 82, 94, 0.57);
+}
+#closeAddAlert{
+    top: -20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(71, 82, 94, 0.57);
+}
+#addWord{
+    width: 100%;
+    margin-bottom: 20px;
+    border: solid 0 black;
+    color: green;
 }
 #adminAlert{
     z-index: 1;
@@ -15,7 +30,17 @@ body{
     left: 0;
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#adminAddAlert{
+    z-index: 1;
+    display: flex;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
 }
@@ -74,7 +99,6 @@ div[class = 'alertBackground']>h3{
     height: max-content;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
 }
 
 div[class = 'search']>img{

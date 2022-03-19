@@ -26,9 +26,8 @@ button:active{
 }
 
 main{
-    width: 90%;
-    margin: 20px auto auto;
     display: flex;
+    min-height: max-content;
     justify-content: center;
     flex-direction: column;
 }

@@ -30,5 +30,10 @@ public class PageController {
     public String user(){
         return "user";
     }
-
+    
+    @GetMapping("/irregularVerb")
+    public String irregularVerb(){
+        return "irregularVerb";
+    }
+    // TODO: 18.03.2022 зробити irregulag verb 
 }

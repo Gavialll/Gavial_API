@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style/screen.css}" href="../static/style/screen.css">
+    <link rel="stylesheet" th:href="@{/style/irregularVerb.css}" href="../static/style/irregularVerb.css">
+    <link rel="manifest" th:href="@{/manifest.webmanifest}">
+</head>
+
+<body id="body">
+    <div id="adminAlert">
+        <div id="closeAlert"></div>
+        <div class="alertBackground">
+            <h3 style="text-align: center">Edit</h3>
+            <h3>Ukraine</h3>
+            <input type="text" id="ukraine">
+            <h3>Past</h3>
+            <input type="text" id="past">
+            <h3>Present</h3>
+            <input type="text" id="present">
+            <h3>Future</h3>
+            <input type="text" id="future">
+            <button style="color: red" id="delete">Delete</button>
+            <div class="wrrapperButton">
+                <button style="color: red" id="editCancel">Cancel</button>
+                <button style="color: green" id="save">Save</button>
+            </div>
+        </div>
+    </div>
+    <div id="adminAddAlert">
+        <div id="closeAddAlert"></div>
+        <div class="alertBackground">
+            <h3 style="text-align: center">Add</h3>
+            <h3>Ukraine</h3>
+            <input type="text" id="addUkraine">
+            <h3>Past</h3>
+            <input type="text" id="addPast">
+            <h3>Present</h3>
+            <input type="text" id="addPresent">
+            <h3>Future</h3>
+            <input type="text" id="addFuture">
+            <button style="color: green" id="add">Add</button>
+            <button style="color: red" id="addCancel">Cancel</button>
+        </div>
+    </div>
+    <main>
+        <div class="search">
+            <img src="../static/image/search.svg" th:src="@{/image/search.svg}" alt="">
+            <input id="search" placeholder="Search" type="text">
+        </div>
+        <button id="addWord">Add</button>
+        <div class="element_wrapper">
+            <div id="first" class="element">
+                <div class="element_name">Йти</div>
+                <div class="element_name">Go</div>
+                <div class="element_name">Went</div>
+                <div class="element_name">Gone</div>
+            </div>
+            <div  class="element">
+                <div class="element_name">Йти</div>
+                <div class="element_name">Go</div>
+                <div class="element_name">Went</div>
+                <div class="element_name">Gone</div>
+            </div>
+            <div  class="element">
+                <div class="element_name">Йти</div>
+                <div class="element_name">Go</div>
+                <div class="element_name">Went</div>
+                <div class="element_name">Gone</div>
+            </div>
+            <div  class="element">
+                <div class="element_name">Йти</div>
+                <div class="element_name">Go</div>
+                <div class="element_name">Went</div>
+                <div class="element_name">Gone</div>
+            </div>
+            <div  class="element">
+                <div class="element_name">Йти</div>
+                <div class="element_name">Go</div>
+                <div class="element_name">Went</div>
+                <div class="element_name">Gone</div>
+            </div>
+            <div  class="element">
+                <div class="element_name">Йти</div>
+                <div class="element_name">Go</div>
+                <div class="element_name">Went</div>
+                <div class="element_name">Gone</div>
+            </div>
+            <div  class="element">
+                <div class="element_name">Йти</div>
+                <div class="element_name">Go</div>
+                <div class="element_name">Went</div>
+                <div class="element_name">Gone</div>
+            </div>
+            <div  class="element">
+                <div class="element_name">Йти</div>
+                <div class="element_name">Go</div>
+                <div class="element_name">Went</div>
+                <div class="element_name">Gone</div>
+            </div>
+            <div  class="element">
+                <div class="element_name">Йти</div>
+                <div class="element_name">Go</div>
+                <div class="element_name">Went</div>
+                <div class="element_name">Gone</div>
+            </div>
+        </div>
+    </main>
+    <header>
+        <div class="menu">
+            <img id="home" src="../static/image/home.svg" th:src="@{/image/home.svg}" alt="">
+            <!--            <img id="add" src="../static/image/plus.svg" th:src="@{/image/plus.svg}" alt="">-->
+            <!--            <img id="myWord" src="../static/image/edit.svg" th:src="@{/image/user.svg}" alt="">-->
+            <img id="user" src="../static/image/user.svg" th:src="@{/image/user.svg}" alt="">
+        </div>
+    </header>
+    <script type="module" th:src="@{/js/module.js}" src="../static/js/module.js"></script>
+    <script type="module" th:src="@{/js/irregularVerb.js}" src="../static/js/irregularVerb.js"></script>
+    <script type="module" th:src="@{/js/menu.js}" src="../static/js/menu.js"></script>
+</body>
+</html>

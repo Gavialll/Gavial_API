@@ -33,6 +33,25 @@ body{
     width: 80%;
     height: max-content;
 }
+div[class = 'alertBackground']>input[type = 'text']{
+    border-radius: 10px;
+    outline:none;
+    background: #1C1D1E;
+    border: solid 2px #286c7d;
+    padding: 10px;
+    font-size: 20px;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+    margin-top: 5px;
+
+}
+div[class = 'alertBackground']>input[type = 'text']:focus {
+    background: #1C1D1E;
+    box-shadow: 0 0 5px 1px #286c7d;
+    border: solid 2px #286c7d;
+}
+div[class = 'alertBackground']>h3{
+    margin-top: 15px;
+}
 #closeAddAlert{
     top: -20px;
     left: 0;
@@ -51,32 +70,11 @@ body{
     justify-content: center;
     align-items: center;
 }
-#addWord{
+#addWord {
     width: 100%;
     margin-bottom: 20px;
     border: solid 0 black;
     color: green;
-}
-div[class = 'alertBackground']>textarea{
-    resize: none;
-    border-radius: 10px;
-    outline:none;
-    background: #1C1D1E;
-    border: solid 2px #286c7d;
-    padding: 10px;
-    font-size: 20px;
-    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
-    margin-top: 5px;
-    height: 80px;
-
-}
-div[class = 'alertBackground']>textarea:focus {
-    background: #1C1D1E;
-    box-shadow: 0 0 5px 1px #286c7d;
-    border: solid 2px #286c7d;
-}
-div[class = 'alertBackground']>h3{
-    margin-top: 20px;
 }
 
 #search {
@@ -110,9 +108,16 @@ div[class = 'search']>img{
     top: 10px;
 }
 
+.element_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .element{
-    padding: 0px 10px 10px 15px;
+    padding: 0 5px 5px 5px;
     margin-bottom: 10px;
+    width: 45%;
     background-color: #1C1D1E;
     border-radius: 10px;
     height: max-content;
@@ -120,13 +125,14 @@ div[class = 'search']>img{
     box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
     display: flex;
     justify-content: space-around;
+    text-align: center;
     flex-direction: column;
 }
 .element:active{
     box-shadow: 0 0 5px 1px #286c7d;
 }
 .element_name{
-    margin-top: 10px;
+    margin-top: 8px;
     width: 100%;
     font-size: 15px;
     height: max-content;
