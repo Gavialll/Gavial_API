@@ -10,7 +10,12 @@ let body = document.getElementById('body');
 
 adminPanel.addEventListener('click', () => {
     adminAlert.style.display = 'flex';
-    body.style.height = '400px';
+    let height = document.documentElement.clientHeight;
+    if(height < 600){
+        body.style.height = '650px';
+    }else {
+        body.style.height = `${height}px`
+    }
 })
 closeAlert.addEventListener('click', () => {
     adminAlert.style.display = 'none';

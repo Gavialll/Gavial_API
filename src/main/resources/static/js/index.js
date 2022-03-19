@@ -2,6 +2,8 @@ import {address} from "./module.js";
 
 document.addEventListener("touchstart", function() {},false);
 
+
+
 // let word = document.getElementById("word");
 // let sentence = document.getElementById("sentence");
 // let user = document.getElementById("user");

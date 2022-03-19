@@ -14,12 +14,16 @@ let add = document.getElementById('add')
 
 first.addEventListener('click', () => {
     adminAlert.style.display = 'flex';
-    body.style.height = '630px';
+    let height = document.documentElement.clientHeight;
+    if(height < 600){
+        body.style.height = '650px';
+    }else {
+        body.style.height = `${height}px`
+    }
 })
 closeAlert.addEventListener('click', () => {
     adminAlert.style.display = 'none';
     body.style.height = 'auto';
-
 })
 editCancel.addEventListener('click', () => {
     adminAlert.style.display = 'none';
@@ -28,11 +32,16 @@ editCancel.addEventListener('click', () => {
 
 addWord.addEventListener('click', () => {
     adminAddAlert.style.display = 'flex';
-    body.style.height = '630px';
+    let height = document.documentElement.clientHeight;
+    if(height < 600){
+        body.style.height = '650px';
+    }else {
+        body.style.height = `${height}px`
+    }
 })
 closeAddAlert.addEventListener('click', () => {
-    adminAddAlert.style.display = 'none';
     body.style.height = 'auto';
+    adminAddAlert.style.display = 'none';
 })
 addCancel.addEventListener('click', () => {
     adminAddAlert.style.display = 'none';
