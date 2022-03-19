@@ -6,12 +6,15 @@ let closeAlert = document.getElementById('closeAlert');
 let word = document.getElementById('word');
 let sentence = document.getElementById('sentence');
 let irregularVerb = document.getElementById('irregularVerb');
+let body = document.getElementById('body');
 
 adminPanel.addEventListener('click', () => {
     adminAlert.style.display = 'flex';
+    body.style.height = '400px';
 })
 closeAlert.addEventListener('click', () => {
     adminAlert.style.display = 'none';
+    body.style.height = 'auto';
 })
 word.addEventListener('click', () => {
     window.location.href = address("/word");

@@ -36,7 +36,7 @@ body{
 }
 #adminAddAlert{
     z-index: 1;
-    display: flex;
+    display: none;
     left: 0;
     position: absolute;
     width: 100%;
