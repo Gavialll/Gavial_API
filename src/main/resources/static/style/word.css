@@ -28,7 +28,7 @@ body{
     z-index: 1;
     display: none;
     left: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -38,7 +38,7 @@ body{
     z-index: 1;
     display: none;
     left: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -113,8 +113,15 @@ div[class = 'search']>img{
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.clickZone{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(150, 159, 170, 0);
+}
 
 .element{
+    position: relative;
     padding: 5px;
     margin-bottom: 10px;
     width: 45%;

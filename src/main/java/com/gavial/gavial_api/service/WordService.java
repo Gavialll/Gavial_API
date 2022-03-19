@@ -15,4 +15,15 @@ public class WordService {
     public List<Word> getAll(){
         return wordRepository.findAll();
     }
+
+    public boolean edit(Word word){
+        System.out.println(word);
+        wordRepository.save(word);
+        return true;
+    }
+
+    public boolean delete(Long id){
+        wordRepository.deleteById(id);
+        return true;
+    }
 }

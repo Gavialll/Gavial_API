@@ -12,15 +12,16 @@ let addCancel = document.getElementById('addCancel');
 let addWord = document.getElementById('addWord');
 let add = document.getElementById('add')
 
-first.addEventListener('click', () => {
-    adminAlert.style.display = 'flex';
-    let height = document.documentElement.clientHeight;
-    if(height < 600){
-        body.style.height = '650px';
-    }else {
-        body.style.height = `${height}px`
-    }
-})
+
+// first.addEventListener('click', () => {
+//     adminAlert.style.display = 'flex';
+//     let height = document.documentElement.clientHeight;
+//     if(height < 600){
+//         body.style.height = '650px';
+//     }else {
+//         body.style.height = `${height}px`
+//     }
+// })
 closeAlert.addEventListener('click', () => {
     adminAlert.style.display = 'none';
     body.style.height = 'auto';
