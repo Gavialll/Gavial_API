@@ -15,7 +15,7 @@ import javax.persistence.Id;
 public class Word {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String ukraine;
     private String english;
