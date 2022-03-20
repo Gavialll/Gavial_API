@@ -10,15 +10,22 @@ fetch(url).then(response => {
     for (let word of words) {
         printWords(word);
     }
+})
 
-    document.addEventListener('click', function(e) {
-        let id = +e.target.id;
-        if(typeof id === "number") {
-            let english = document.getElementById('english');
-            let ukraine = document.getElementById('ukraine');
-            let adminAlert = document.getElementById('adminAlert');
-            let body = document.getElementById('body');
+document.addEventListener('click', function(e) {
+    let id = +e.target.id;
+    if(typeof id === "number") {
+        let english = document.getElementById('english');
+        let ukraine = document.getElementById('ukraine');
+        let adminAlert = document.getElementById('adminAlert');
+        let body = document.getElementById('body');
 
+        let url = address("/api/sentence/getAll")
+        fetch(url).then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+        }).then(words => {
             for (let word of words) {
                 if (word.id === id) {
                     localStorage.setItem("id", id)
@@ -34,8 +41,8 @@ fetch(url).then(response => {
                     }
                 }
             }
-        }
-    })
+        })
+    }
 })
 
 let save = document.getElementById('save');
@@ -48,19 +55,26 @@ save.addEventListener('click', () => {
         id: localStorage.getItem('id')
     }
 
-
     fetch(address("/api/sentence/edit"), {
         method: 'POST',
         body: JSON.stringify(word),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+        headers: {'Content-Type': 'application/json'}
     }).then(response => {
         if (response.ok) {
-            return response.json()
+            response.json()
+                .then(word => {
+                let arr = document.getElementById(localStorage.getItem('id'))
+                    .parentElement
+                    .childNodes;
+                arr[0].innerText = word.english;
+                arr[2].innerText = word.ukraine
+                let body = document.getElementById('body');
+                body.style.height = 'auto';
+                let adminAlert = document.getElementById("adminAlert")
+                adminAlert.style.display = 'none';
+            })
         }
     })
-    location.reload();
 })
 
 let add = document.getElementById('add');
@@ -78,31 +92,36 @@ add.addEventListener('click', () => {
     fetch(address("/api/sentence/edit"), {
         method: 'POST',
         body: JSON.stringify(word),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+        headers: {'Content-Type': 'application/json'}
     }).then(response => {
         if (response.ok) {
-            return response.json()
+            response.json().then(word => {
+                printWords(word)
+                let body = document.getElementById('body');
+                body.style.height = 'auto';
+                let adminAddAlert = document.getElementById("adminAddAlert")
+                adminAddAlert.style.display = 'none';
+            })
         }
     })
-    location.reload();
 })
 
 let del = document.getElementById('delete');
     del.addEventListener('click', ()=>{
+        let id = localStorage.getItem('id');
         fetch(address("/api/sentence/delete"), {
             method: 'POST',
-            body: JSON.stringify(localStorage.getItem('id')),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            body: JSON.stringify(id),
+            headers: {'Content-Type': 'application/json'}
         }).then(response => {
             if (response.ok) {
-                return response.json()
+                document.getElementById(id).parentElement.remove();
+                let body = document.getElementById('body');
+                body.style.height = 'auto';
+                let adminAlert = document.getElementById("adminAlert")
+                adminAlert.style.display = 'none';
             }
         })
-        location.reload();
     })
 
 function printWords(sentence){

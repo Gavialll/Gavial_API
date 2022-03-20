@@ -26,16 +26,18 @@ public class WordController {
 
     @GetMapping("/getAll")
     public List<Word> getAll() {
+        System.out.println("get all words");
         return wordService.getAll();
     }
 
     @PostMapping("/edit")
     public Word edit(@RequestBody Word word) {
-        System.out.println(word);
+        System.out.println("uprate: " + word);
         return wordService.edit(word);
     }
     @PostMapping("/delete")
     public boolean edit(@RequestBody Long id) {
+        System.out.println("delete word: " + id);
         return wordService.delete(id);
     }
 }

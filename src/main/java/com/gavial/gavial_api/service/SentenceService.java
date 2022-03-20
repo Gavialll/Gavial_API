@@ -16,9 +16,8 @@ public class SentenceService {
         return sentenceRepository.findAll();
     }
 
-    public boolean edit(Sentence sentence){
-        sentenceRepository.save(sentence);
-        return true;
+    public Sentence edit(Sentence sentence){
+        return sentenceRepository.save(sentence);
     }
 
     public boolean delete(Long id){

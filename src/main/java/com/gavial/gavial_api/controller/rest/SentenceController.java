@@ -30,14 +30,17 @@ public class SentenceController {
     }
         @GetMapping("/getAll")
         public List<Sentence> getAll() {
+            System.out.println("get all sentence");
             return sentenceService.getAll();
         }
         @PostMapping("/edit")
-        public boolean edit(@RequestBody Sentence sentence) {
+        public Sentence edit(@RequestBody Sentence sentence) {
+            System.out.println("update: " + sentence);
             return sentenceService.edit(sentence);
         }
         @PostMapping("/delete")
         public boolean edit(@RequestBody Long id) {
+            System.out.println("delete sentence: " + id);
             return sentenceService.delete(id);
         }
     }
