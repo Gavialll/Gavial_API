@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class Sentence {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String english;
     private String ukraine;
