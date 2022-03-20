@@ -16,10 +16,8 @@ public class WordService {
         return wordRepository.findAll();
     }
 
-    public boolean edit(Word word){
-
-        System.out.println(wordRepository.save(word));
-        return true;
+    public Word edit(Word word){
+        return wordRepository.save(word);
     }
 
     public boolean delete(Long id){

@@ -30,7 +30,7 @@ public class WordController {
     }
 
     @PostMapping("/edit")
-    public boolean edit(@RequestBody Word word) {
+    public Word edit(@RequestBody Word word) {
         System.out.println(word);
         return wordService.edit(word);
     }

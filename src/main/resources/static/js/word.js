@@ -1,6 +1,5 @@
 import {address, POST} from "./module.js";
 
-
 let url = address("/api/getAll")
 fetch(url).then(response => {
     if (response.ok) {
@@ -10,18 +9,26 @@ fetch(url).then(response => {
     for (let word of words) {
         printWords(word);
     }
+})
 
-    document.addEventListener('click', function(e) {
-        let id = +e.target.id;
-        if(typeof id === "number") {
-            let english = document.getElementById('english');
-            let ukraine = document.getElementById('ukraine');
-            let adminAlert = document.getElementById('adminAlert');
-            let body = document.getElementById('body');
+document.addEventListener('click', function(e) {
+    let id = +e.target.id;
+    if(typeof id === "number"){
+        let english = document.getElementById('english');
+        let ukraine = document.getElementById('ukraine');
+        let adminAlert = document.getElementById('adminAlert');
+        let body = document.getElementById('body');
 
-            for (let word of words) {
+        let url = address("/api/getAll")
+        fetch(url).then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+        }).then(words => {
+            for (let word of words){
                 if (word.id === id) {
-                    localStorage.setItem("id", id)
+                    localStorage.setItem('id', id)
+                    console.log(localStorage.getItem('id'));
                     english.value = word.english;
                     ukraine.value = word.ukraine;
 
@@ -34,80 +41,82 @@ fetch(url).then(response => {
                     }
                 }
             }
-        }
-    })
+        })
+    }
 })
 
 let save = document.getElementById('save');
 save.addEventListener('click', () => {
-
-    console.log(localStorage.getItem('id'));
     let word = {
         english: document.getElementById('english').value,
         ukraine: document.getElementById('ukraine').value,
         id: localStorage.getItem('id')
     }
 
-
     fetch(address("/api/edit"), {
         method: 'POST',
         body: JSON.stringify(word),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+        headers: {'Content-Type': 'application/json'}
     }).then(response => {
         if (response.ok) {
-            return response.json()
+            response.json()
+                .then(word => {
+                    let arr = document.getElementById(localStorage.getItem('id'))
+                        .parentElement
+                        .childNodes;
+                    console.log(arr)
+                    arr[0].innerText = word.english;
+                    arr[1].innerText = word.ukraine
+                    let body = document.getElementById('body');
+                    body.style.height = 'auto';
+                    let adminAlert = document.getElementById("adminAlert")
+                    adminAlert.style.display = 'none';
+            })
         }
     })
-    location.reload();
 })
 
 let add = document.getElementById('add');
 add.addEventListener('click', () => {
-
-    console.log(localStorage.getItem('id'));
     let word = {
         english: document.getElementById('addEnglish').value,
         ukraine: document.getElementById('addUkraine').value,
         id: null
     }
 
-
     fetch(address("/api/edit"), {
         method: 'POST',
         body: JSON.stringify(word),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+        headers: {'Content-Type': 'application/json'}
     }).then(response => {
         if (response.ok) {
-            location.reload();
-            return response.json()
+            response.json().then(word => {
+                printWords(word)
+                let body = document.getElementById('body');
+                body.style.height = 'auto';
+                let adminAddAlert = document.getElementById("adminAddAlert")
+                adminAddAlert.style.display = 'none';
+            })
         }
     })
-    // location.reload();
-    // printWords(word)
-    // let body = document.getElementById('body');
-    // body.style.height = 'auto';
-    // let adminAddAlert = document.getElementById("adminAddAlert")
-    // adminAddAlert.style.display = 'none';
 })
 
 let del = document.getElementById('delete');
-    del.addEventListener('click', ()=>{
+    del.addEventListener('click', () => {
+        let id = localStorage.getItem('id');
         fetch(address("/api/delete"), {
             method: 'POST',
-            body: JSON.stringify(localStorage.getItem('id')),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            body: JSON.stringify(id),
+            headers: {'Content-Type': 'application/json'}
         }).then(response => {
             if (response.ok) {
-                return response.json()
+                document.getElementById(id).parentElement.remove()
+                let body = document.getElementById('body');
+                body.style.height = 'auto';
+                let adminAlert = document.getElementById("adminAlert")
+                adminAlert.style.display = 'none';
             }
         })
-        location.reload();
     })
 
 function printWords(word){
@@ -118,8 +127,10 @@ function printWords(word){
 
     let english = document.createElement('div');
         english.innerText = word.english;
+        english.classList.add('element_name')
     let ukraine = document.createElement('div');
         ukraine.innerText = word.ukraine;
+        ukraine.classList.add('element_name')
 
     let clickZone = document.createElement('div');
         clickZone.classList.add("clickZone")
