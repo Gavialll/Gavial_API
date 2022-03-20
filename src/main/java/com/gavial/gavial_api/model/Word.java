@@ -11,20 +11,13 @@ import javax.persistence.Id;
 
 @Entity
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class Word {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String ukraine;
     private String english;
-
-    @Override
-    public String toString() {
-        return "Word{" + "id=" + id + ", ukraine='" + ukraine + '\'' + ", english='" + english + '\'' + '}';
-    }
-
-    public Word() {
-    }
 }
