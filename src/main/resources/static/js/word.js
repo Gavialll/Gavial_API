@@ -82,15 +82,16 @@ add.addEventListener('click', () => {
         }
     }).then(response => {
         if (response.ok) {
+            location.reload();
             return response.json()
         }
     })
     // location.reload();
-    printWords(word)
-    let body = document.getElementById('body');
-    body.style.height = 'auto';
-    let adminAddAlert = document.getElementById("adminAddAlert")
-    adminAddAlert.style.display = 'none';
+    // printWords(word)
+    // let body = document.getElementById('body');
+    // body.style.height = 'auto';
+    // let adminAddAlert = document.getElementById("adminAddAlert")
+    // adminAddAlert.style.display = 'none';
 })
 
 let del = document.getElementById('delete');
