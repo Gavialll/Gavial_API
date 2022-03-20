@@ -70,7 +70,7 @@ add.addEventListener('click', () => {
     let word = {
         english: document.getElementById('addEnglish').value,
         ukraine: document.getElementById('addUkraine').value,
-        id: 200
+        id: null
     }
 
 

@@ -16,6 +16,7 @@ public class WordController {
     public List<Word> getAll() {
         return wordService.getAll();
     }
+
     @PostMapping("/edit")
     public boolean edit(@RequestBody Word word) {
         System.out.println(word);
