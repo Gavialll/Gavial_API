@@ -13,6 +13,7 @@ import javax.persistence.Id;
 @Data
 @AllArgsConstructor
 public class Word {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
