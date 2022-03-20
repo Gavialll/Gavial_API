@@ -17,7 +17,6 @@ public class WordService {
     }
 
     public boolean edit(Word word){
-        System.out.println(word);
         wordRepository.save(word);
         return true;
     }

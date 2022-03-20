@@ -4,7 +4,6 @@ import com.gavial.gavial_api.model.Word;
 import com.gavial.gavial_api.service.WordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -22,7 +21,6 @@ public class WordController {
         System.out.println(word);
         return wordService.edit(word);
     }
-
     @PostMapping("/delete")
     public boolean edit(@RequestBody Long id) {
         return wordService.delete(id);
