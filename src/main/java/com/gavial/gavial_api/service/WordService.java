@@ -17,12 +17,18 @@ public class WordService {
     }
 
     public boolean edit(Word word){
-        wordRepository.save(word);
+
+        System.out.println(wordRepository.save(word));
         return true;
     }
 
     public boolean delete(Long id){
         wordRepository.deleteById(id);
+        return true;
+    }
+
+    public boolean delete(){
+        wordRepository.deleteAll();
         return true;
     }
 }

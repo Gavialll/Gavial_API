@@ -12,6 +12,18 @@ public class WordController {
     @Autowired
     private WordService wordService;
 
+    @GetMapping("/reload/word")
+    public void reload(){
+       List<Word> list = wordService.getAll();
+
+       wordService.delete();
+
+        for(int i = 0; i < list.size(); i++) {
+            list.get(i).setId((long) i);
+            wordService.edit(list.get(i));
+        }
+    }
+
     @GetMapping("/getAll")
     public List<Word> getAll() {
         return wordService.getAll();

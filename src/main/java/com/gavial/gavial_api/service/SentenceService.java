@@ -25,4 +25,8 @@ public class SentenceService {
         sentenceRepository.deleteById(id);
         return true;
     }
+    public boolean delete(){
+        sentenceRepository.deleteAll();
+        return true;
+    }
 }

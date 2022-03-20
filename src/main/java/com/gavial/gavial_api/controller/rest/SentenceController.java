@@ -16,6 +16,18 @@ public class SentenceController {
         @Autowired
         private SentenceService sentenceService;
 
+
+    @GetMapping("/reload/sentence")
+    public void reload(){
+        List<Sentence> list = sentenceService.getAll();
+
+        sentenceService.delete();
+
+        for(int i = 0; i < list.size(); i++) {
+            list.get(i).setId((long) i);
+            sentenceService.edit(list.get(i));
+        }
+    }
         @GetMapping("/getAll")
         public List<Sentence> getAll() {
             return sentenceService.getAll();
