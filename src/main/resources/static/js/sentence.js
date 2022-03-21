@@ -16,7 +16,6 @@ send.addEventListener('click', e => {
         }
     })
 })
-
 let search = document.getElementById('search');
 search.addEventListener('keydown', e => {
     if (e.code === "Enter") {
