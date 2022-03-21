@@ -1,15 +1,40 @@
 import {address, POST} from "./module.js";
 
-let url = address("/api/getAll")
-fetch(url).then(response => {
-    if (response.ok) {
-        return response.json()
+let search = document.getElementById('search');
+search.addEventListener('keydown', e => {
+        if (e.code === "Enter") {
+
+            document.querySelectorAll('.element').forEach(el => el.remove())
+
+        let url = address("/api/getAll")
+        fetch(url).then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+        }).then(words => {
+            for (let word of words) {
+                if(word.english.includes(search.value) || word.ukraine.includes(search.value)){
+                    printWords(word);
+                }
+            }
+        })
     }
-}).then(words => {
-    for (let word of words) {
-        printWords(word);
-    }
-})
+});
+
+
+    let url = address("/api/getAll")
+    fetch(url).then(response => {
+        if (response.ok) {
+            return response.json()
+        }
+    }).then(words => {
+        console.log("first print")
+        for (let word of words) {
+            printWords(word);
+        }
+    })
+
+
 
 document.addEventListener('click', function(e) {
     let id = +e.target.id;
@@ -102,17 +127,18 @@ add.addEventListener('click', () => {
 let del = document.getElementById('delete');
     del.addEventListener('click', () => {
         let id = localStorage.getItem('id');
+        document.getElementById(id).parentElement.remove()
+        let body = document.getElementById('body');
+        body.style.height = 'auto';
+        let adminAlert = document.getElementById("adminAlert")
+        adminAlert.style.display = 'none';
         fetch(address("/api/delete"), {
             method: 'POST',
             body: JSON.stringify(id),
             headers: {'Content-Type': 'application/json'}
         }).then(response => {
             if (response.ok) {
-                document.getElementById(id).parentElement.remove()
-                let body = document.getElementById('body');
-                body.style.height = 'auto';
-                let adminAlert = document.getElementById("adminAlert")
-                adminAlert.style.display = 'none';
+
             }
         })
     })
