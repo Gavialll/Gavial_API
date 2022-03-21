@@ -3,7 +3,7 @@ import {address, POST} from "./module.js";
 let send = document.getElementById('send')
 send.addEventListener('click', e => {
     document.querySelectorAll('.element').forEach(el => el.remove())
-    let url = address("/api/getAll")
+    let url = address("/api/sentence/getAll")
     fetch(url).then(response => {
         if (response.ok){
             return response.json()
