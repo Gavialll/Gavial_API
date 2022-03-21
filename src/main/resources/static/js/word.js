@@ -2,18 +2,17 @@ import {address, POST} from "./module.js";
 
 let search = document.getElementById('search');
 search.addEventListener('keydown', e => {
-        if (e.code === "Enter") {
-
-            document.querySelectorAll('.element').forEach(el => el.remove())
-
+    console.log(e.code)
+    if (e.code === "Enter"){
+        document.querySelectorAll('.element').forEach(el => el.remove())
         let url = address("/api/getAll")
         fetch(url).then(response => {
-            if (response.ok) {
+            if (response.ok){
                 return response.json()
             }
         }).then(words => {
             for (let word of words) {
-                if(word.english.includes(search.value) || word.ukraine.includes(search.value)){
+                if(word.english.includes(search.value.toString().toLowerCase()) || word.ukraine.includes(search.value.toString().toLowerCase())){
                     printWords(word);
                 }
             }
