@@ -40,5 +40,4 @@ public class PageController {
     public String irregularVerb(){
         return "irregularVerb";
     }
-    // TODO: 18.03.2022 зробити irregulag verb 
 }
