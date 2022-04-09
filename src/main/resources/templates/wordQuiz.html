@@ -6,17 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
     <link rel="stylesheet" th:href="@{/style/screen.css}" href="../static/style/screen.css">
-    <link rel="stylesheet" th:href="@{/style/index.css}" href="../static/style/index.css">
+    <link rel="stylesheet" th:href="@{/style/wordQuiz.css}" href="../static/style/wordQuiz.css">
     <link rel="manifest" th:href="@{/manifest.webmanifest}">
 </head>
 
-<body>
+<body>️
+
+<div id="alert">
+    <div id="closeAlert"></div>
+    <div class="alertBackground">
+        <h3 style="text-align: center; font-size: 3em">Result</h3>
+        <h3 style="font-size: 4em; text-align: center" id="alertScore">🏆 0</h3>
+
+        <div class="wrrapperButton">
+            <div class="button" id="menu">Menu 🏠</div>
+            <div class="button" id="tryAgain">Try again 🔄</div>
+        </div>
+    </div>
+</div>
+
+    <div class="topHeader">
+        <div id="score" class="info">🏆 0</div>
+        <div id="health" class="info">3 ❤️</div>
+    </div>
     <main>
-        <span class="logo">Hi ✋👋✋<br>My name Gavial<br>I'm a bot 🦾 for learning English📖</span>
-        <button id="wordQuiz">Word</button>
-        <button id="sentence">Sentence</button>
-        <button id="irregularVerb">Irregular verb</button>
-        <button id="checkRightAnswer">Check right answer</button>
     </main>
     <header>
         <div class="menu">
@@ -27,7 +40,7 @@
         </div>
     </header>
     <script type="module" th:src="@{/js/module.js}" src="../static/js/module.js"></script>
-    <script type="module" th:src="@{/js/index.js}" src="../static/js/index.js"></script>
+    <script type="module" th:src="@{/js/wordQuiz.js}" src="../static/js/wordQuiz.js"></script>
     <script type="module" th:src="@{/js/menu.js}" src="../static/js/menu.js"></script>
 
 </body>

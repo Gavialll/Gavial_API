@@ -26,6 +26,11 @@ public class PageController {
         return "word";
     }
 
+    @GetMapping("/wordQuiz")
+    public String wordQuiz(){
+        return "wordQuiz";
+    }
+
     @GetMapping("/user")
     public String user(){
         return "user";

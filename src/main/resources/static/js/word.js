@@ -2,33 +2,33 @@ import {address, POST} from "./module.js";
 
 let search = document.getElementById('search');
 let send = document.getElementById('send')
-    send.addEventListener('click', e => {
-        document.querySelectorAll('.element').forEach(el => el.remove())
-        let url = address("/api/getAll")
-        fetch(url).then(response => {
-            if (response.ok){
-                return response.json()
+send.addEventListener('click', e => {
+    document.querySelectorAll('.element').forEach(el => el.remove())
+    let url = address("/api/getAll")
+    fetch(url).then(response => {
+        if (response.ok) {
+            return response.json()
+        }
+    }).then(words => {
+        for (let word of words) {
+            if (word.english.includes(search.value.toString().toLowerCase()) || word.ukraine.includes(search.value.toString().toLowerCase())) {
+                printWords(word);
             }
-        }).then(words => {
-            for (let word of words) {
-                if(word.english.includes(search.value.toString().toLowerCase()) || word.ukraine.includes(search.value.toString().toLowerCase())){
-                    printWords(word);
-                }
-            }
-        })
+        }
     })
+})
 search.addEventListener('keydown', e => {
     console.log(e.code)
-    if (e.code === "Enter"){
+    if (e.code === "Enter") {
         document.querySelectorAll('.element').forEach(el => el.remove())
         let url = address("/api/getAll")
         fetch(url).then(response => {
-            if (response.ok){
+            if (response.ok) {
                 return response.json()
             }
         }).then(words => {
             for (let word of words) {
-                if(word.english.includes(search.value.toString().toLowerCase()) || word.ukraine.includes(search.value.toString().toLowerCase())){
+                if (word.english.includes(search.value.toString().toLowerCase()) || word.ukraine.includes(search.value.toString().toLowerCase())) {
                     printWords(word);
                 }
             }
@@ -37,23 +37,22 @@ search.addEventListener('keydown', e => {
 });
 
 
-    let url = address("/api/getAll")
-    fetch(url).then(response => {
-        if (response.ok) {
-            return response.json()
-        }
-    }).then(words => {
-        console.log("first print")
-        for (let word of words) {
-            printWords(word);
-        }
-    })
+let url = address("/api/getAll")
+fetch(url).then(response => {
+    if (response.ok) {
+        return response.json()
+    }
+}).then(words => {
+    console.log("first print")
+    for (let word of words) {
+        printWords(word);
+    }
+})
 
 
-
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     let id = +e.target.id;
-    if(typeof id === "number"){
+    if (typeof id === "number") {
         let english = document.getElementById('english');
         let ukraine = document.getElementById('ukraine');
         let adminAlert = document.getElementById('adminAlert');
@@ -65,7 +64,7 @@ document.addEventListener('click', function(e) {
                 return response.json()
             }
         }).then(words => {
-            for (let word of words){
+            for (let word of words) {
                 if (word.id === id) {
                     localStorage.setItem('id', id)
                     english.value = word.english;
@@ -109,7 +108,7 @@ save.addEventListener('click', () => {
                     body.style.height = 'auto';
                     let adminAlert = document.getElementById("adminAlert")
                     adminAlert.style.display = 'none';
-            })
+                })
         }
     })
 })
@@ -140,43 +139,43 @@ add.addEventListener('click', () => {
 })
 
 let del = document.getElementById('delete');
-    del.addEventListener('click', () => {
-        let id = localStorage.getItem('id');
-        document.getElementById(id).parentElement.remove()
-        let body = document.getElementById('body');
-        body.style.height = 'auto';
-        let adminAlert = document.getElementById("adminAlert")
-        adminAlert.style.display = 'none';
-        fetch(address("/api/delete"), {
-            method: 'POST',
-            body: JSON.stringify(id),
-            headers: {'Content-Type': 'application/json'}
-        }).then(response => {
-            if (response.ok) {
+del.addEventListener('click', () => {
+    let id = localStorage.getItem('id');
+    document.getElementById(id).parentElement.remove()
+    let body = document.getElementById('body');
+    body.style.height = 'auto';
+    let adminAlert = document.getElementById("adminAlert")
+    adminAlert.style.display = 'none';
+    fetch(address("/api/delete"), {
+        method: 'POST',
+        body: JSON.stringify(id),
+        headers: {'Content-Type': 'application/json'}
+    }).then(response => {
+        if (response.ok) {
 
-            }
-        })
+        }
     })
+})
 
-function printWords(word){
+function printWords(word) {
     let wrapper = document.querySelector('div[class = element_wrapper]')
 
     let element = document.createElement('div');
-        element.classList.add('element');
+    element.classList.add('element');
 
     let english = document.createElement('div');
-        english.innerText = word.english;
-        english.classList.add('element_name')
+    english.innerText = word.english;
+    english.classList.add('element_name')
     let ukraine = document.createElement('div');
-        ukraine.innerText = word.ukraine;
-        ukraine.classList.add('element_name')
+    ukraine.innerText = word.ukraine;
+    ukraine.classList.add('element_name')
 
     let clickZone = document.createElement('div');
-        clickZone.classList.add("clickZone")
-        clickZone.id = word.id;
+    clickZone.classList.add("clickZone")
+    clickZone.id = word.id;
 
-            element.append(english, ukraine, clickZone);
-        wrapper.append(element);
+    element.append(english, ukraine, clickZone);
+    wrapper.append(element);
 }
 
 
