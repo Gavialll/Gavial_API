@@ -1,0 +1,138 @@
+
+/*Alert**************************************/
+.wrrapperButton{
+    display: flex;
+    justify-content: space-between;
+}
+
+body{
+    position: relative;
+    padding-bottom: 55px;
+}
+#closeAlert{
+    top: -20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(71, 82, 94, 0.57);
+}
+
+#alert{
+    z-index: 1;
+    display: none;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.alertBackground{
+    z-index: 1;
+    position: absolute;
+    top: auto;
+    left: auto;
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1C1D1E;
+    border-radius: 10px;
+    width: 80%;
+    height: max-content;
+}
+
+div[class = 'alertBackground']>h3{
+    margin-top: 20px;
+}
+/***************************************/
+
+
+
+
+
+.info{
+    font-size: 2em;
+}
+.topHeader{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
+}
+
+button{
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+}
+.logo{
+    text-align: center;
+    color: #969faa;
+    font-size: 2.5em;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 47%;
+    margin-top: 20px;
+    height: 50px;
+    color: #969faa;
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+    background-color: #1C1D1E;
+}
+.button:active{
+    box-shadow: 0 0 5px 1px #286c7d;
+}
+
+button{
+    width: max-content;
+    height: max-content;
+    color: #969faa;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+    background-color: #1C1D1E;
+    border: 3px solid #286c7d;
+}
+button:active{
+    box-shadow: 0 0 5px 1px #286c7d;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: max-content;
+}
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #969faa;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+    background-color: #1C1D1E;
+}
+.result{
+    border-radius: 15px;
+    border: 3px solid #286c7d;
+    width: 100%;
+    height: 200px;
+}
+.choose{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    width: 100%;
+    height: max-content;
+}

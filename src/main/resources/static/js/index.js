@@ -2,41 +2,17 @@ import {address} from "./module.js";
 
 document.addEventListener("touchstart", function() {},false);
 
+let sentence = document.getElementById("sentence");
+let wordQuiz = document.getElementById("wordQuiz");
 
+wordQuiz.addEventListener('click', function(event){
+    window.location.href = address('/wordQuiz');
+})
 
-// let word = document.getElementById("word");
-// let sentence = document.getElementById("sentence");
-// let user = document.getElementById("user");
-//
-//
-// word.addEventListener('click', function(event){
-//     window.location.href = address('/word');
-// })
-// sentence.addEventListener('click', function(event){
-//     window.location.href = address('/sentence')
-// })
+sentence.addEventListener('click', function(event){
+    window.location.href = address('/chooseSentenceQuiz')
+})
 
-
-// let more = document.getElementById("more");
-// more.addEventListener('click', () => {
-//     let canvas = document.getElementById('canvas');
-//     for (let i = 1; i < second.length; i++) {
-//         let element = document.createElement('div');
-//         element.classList.add('element');
-//         let left = document.createElement('div');
-//         left.classList.add('side');
-//         left.innerText = second[i].purchaseRateNB.toString().substr(0, 5);
-//         let center = document.createElement('div');
-//         center.classList.add('center');
-//         center.innerText = second[i].currency;
-//         let right = document.createElement('div');
-//         right.classList.add('side');
-//         right.innerText = second[i].saleRateNB.toString().substr(0, 5);
-//
-//          canvas.insertBefore(element, more);
-//         element.append(left, center, right);
-//     }
-// })
 
 
 

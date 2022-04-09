@@ -31,6 +31,11 @@ public class PageController {
         return "wordQuiz";
     }
 
+    @GetMapping("/chooseSentenceQuiz")
+    public String chooseSentenceQuiz(){
+        return "chooseSentence";
+    }
+
     @GetMapping("/user")
     public String user(){
         return "user";

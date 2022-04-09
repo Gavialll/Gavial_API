@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
     <link rel="stylesheet" th:href="@{/style/screen.css}" href="../static/style/screen.css">
-    <link rel="stylesheet" th:href="@{/style/wordQuiz.css}" href="../static/style/wordQuiz.css">
+    <link rel="stylesheet" th:href="@{/style/chooseSentence.css}" href="../static/style/chooseSentence.css">
     <link rel="manifest" th:href="@{/manifest.webmanifest}">
 </head>
 
@@ -29,6 +29,17 @@
         <div id="health" class="info">3 ❤️</div>
     </div>
     <main>
+        <div class="wrapper">
+            <div id="result" class="result"></div>
+            <div id="choose" class="choose">
+                <button>this</button>
+                <button>a</button>
+                <button>responsible</button>
+                <button>girl</button>
+                <button>very</button>
+                <button>is</button>
+            </div>
+        </div>
     </main>
     <header>
         <div class="menu">
@@ -39,7 +50,7 @@
         </div>
     </header>
     <script type="module" th:src="@{/js/module.js}" src="../static/js/module.js"></script>
-    <script type="module" th:src="@{/js/wordQuiz.js}" src="../static/js/wordQuiz.js"></script>
+    <script type="module" th:src="@{/js/chooseSentence.js}" src="../static/js/chooseSentence.js"></script>
     <script type="module" th:src="@{/js/menu.js}" src="../static/js/menu.js"></script>
 
 </body>

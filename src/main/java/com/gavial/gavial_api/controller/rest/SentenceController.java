@@ -17,7 +17,7 @@ public class SentenceController {
         private SentenceService sentenceService;
 
 
-    @GetMapping("/reload/sentence")
+    @GetMapping("/reload")
     public void reload(){
         List<Sentence> list = sentenceService.getAll();
 

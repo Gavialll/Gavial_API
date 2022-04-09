@@ -34,9 +34,6 @@ document.getElementById('tryAgain')
 })
 
 
-
-
-
 let array = [];
 let printWords = function () {
     let url = address("/api/getAll")
