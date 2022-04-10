@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
-    <link rel="stylesheet" th:href="@{/style/screen.css}" href="../static/style/screen.css">
-    <link rel="stylesheet" th:href="@{/style/chooseSentence.css}" href="../static/style/chooseSentence.css">
-    <link rel="manifest" th:href="@{/manifest.webmanifest}">
+        <link rel="stylesheet" th:href="@{/style/screen.css}" href="../static/style/screen.css">
+        <link rel="stylesheet" th:href="@{/style/chooseSentence.css}" href="../static/style/chooseSentence.css">
+        <link rel="manifest" th:href="@{/manifest.webmanifest}">
 </head>
 
-<body>️
-
+<body>
 <div id="alert">
     <div id="closeAlert"></div>
     <div class="alertBackground">
@@ -29,29 +28,29 @@
         <div id="health" class="info">3 ❤️</div>
     </div>
     <main>
+        <h3>Send word in right answer</h3>
+        <h2 id="task"></h2>
         <div class="wrapper">
             <div id="result" class="result"></div>
             <div id="choose" class="choose">
-                <button>this</button>
-                <button>a</button>
-                <button>responsible</button>
-                <button>girl</button>
-                <button>very</button>
-                <button>is</button>
+<!--                    <button id="one" draggable="true">this</button>-->
+<!--                    <button id="rt" draggable="true">girl</button>-->
+<!--                    <button id="two" draggable="true">is</button>-->
+<!--                    <button id="tswo" draggable="true">smart</button>-->
             </div>
         </div>
     </main>
-    <header>
-        <div class="menu">
-            <img id="home" src="../static/image/home.svg" th:src="@{/image/home.svg}" alt="">
-            <!--            <img id="add" src="../static/image/plus.svg" th:src="@{/image/plus.svg}" alt="">-->
-            <!--            <img id="myWord" src="../static/image/edit.svg" th:src="@{/image/user.svg}" alt="">-->
-            <img id="user" src="../static/image/user.svg" th:src="@{/image/user.svg}" alt="">
-        </div>
-    </header>
-    <script type="module" th:src="@{/js/module.js}" src="../static/js/module.js"></script>
-    <script type="module" th:src="@{/js/chooseSentence.js}" src="../static/js/chooseSentence.js"></script>
-    <script type="module" th:src="@{/js/menu.js}" src="../static/js/menu.js"></script>
 
+<header>
+    <div class="menu">
+        <img id="home" src="../static/image/home.svg" th:src="@{/image/home.svg}" alt="">
+        <!--            <img id="add" src="../static/image/plus.svg" th:src="@{/image/plus.svg}" alt="">-->
+        <!--            <img id="myWord" src="../static/image/edit.svg" th:src="@{/image/user.svg}" alt="">-->
+        <img id="user" src="../static/image/user.svg" th:src="@{/image/user.svg}" alt="">
+    </div>
+</header>
+<script type="module" th:src="@{/js/module.js}" src="../static/js/module.js"></script>
+<script type="module" th:src="@{/js/chooseSentence.js}" src="../static/js/chooseSentence.js"></script>
+<script type="module" th:src="@{/js/menu.js}" src="../static/js/menu.js"></script>
 </body>
 </html>
