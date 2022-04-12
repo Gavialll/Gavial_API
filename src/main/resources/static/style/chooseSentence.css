@@ -1,139 +1,156 @@
-
-/*Alert**************************************/
-.wrrapperButton{
-    display: flex;
-    justify-content: space-between;
-}
-
-body{
-    position: relative;
-    padding-bottom: 55px;
-}
-#closeAlert{
-    top: -20px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(71, 82, 94, 0.57);
-}
-
-#alert{
-    z-index: 1;
-    display: none;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-.alertBackground{
-    z-index: 1;
-    position: absolute;
-    top: auto;
-    left: auto;
-    padding: 0 20px 20px 20px;
-    display: flex;
-    flex-direction: column;
+body {
     background-color: #1C1D1E;
-    border-radius: 10px;
-    width: 80%;
-    height: max-content;
 }
 
-div[class = 'alertBackground']>h3{
-    margin-top: 20px;
-}
-/***************************************/
-
-
-
-
-
-.info{
+h2 {
     font-size: 2em;
-}
-.topHeader{
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 20px 0 20px;
+    text-align: center;
+    margin: 5px;
 }
 
-button{
+button {
     padding: 0;
     border: none;
     font: inherit;
     color: inherit;
 }
-.logo{
-    text-align: center;
-    color: #969faa;
-    font-size: 2.5em;
-}
 
-.button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 47%;
-    margin-top: 20px;
-    height: 50px;
-    color: #969faa;
-    border-radius: 10px;
-    padding: 2px;
-    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
-    background-color: #1C1D1E;
-}
-.button:active{
-    box-shadow: 0 0 5px 1px #286c7d;
-}
-
-button{
-    width: max-content;
-    height: max-content;
-    color: #969faa;
+button {
     border-radius: 15px;
     padding: 10px;
     margin: 5px;
     background-color: #1C1D1E;
     border: 3px solid #286c7d;
 }
-button:active{
+
+button:active {
     box-shadow: 0 0 5px 1px #286c7d;
 }
 
-main{
+main {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
     min-height: max-content;
 }
 
-.wrapper{
-    width: 100%;
+div[class = 'alertBackground'] > h3 {
+    margin-top: 20px;
+    font-size: 3em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 5px;
+}
+
+.alertBackground {
+    position: absolute;
+    padding: 0 20px 20px 20px;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    color: #969faa;
-    border-radius: 10px;
-    padding: 10px;
+    background-color: #1C1D1E;
+    border-radius: 15px;
+    width: 80%;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 47%;
+    margin-top: 20px;
+    height: 50px;
+    border-radius: 15px;
+    padding: 2px;
     box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
     background-color: #1C1D1E;
 }
-.result{
 
+.button:active {
+    box-shadow: 0 0 5px 1px #286c7d;
+}
+
+.result {
     border-radius: 15px;
     border: 3px solid #286c7d;
     width: 100%;
     height: 200px;
 }
-.choose{
+
+.wrrapperButton {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    font-size: 2em;
+}
+
+.topHeader {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
+}
+
+.logo {
+    text-align: center;
+    color: #969faa;
+    font-size: 2.5em;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #969faa;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.choose {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
     width: 100%;
     height: max-content;
+}
+
+#next {
+    border: solid 3px green;
+}
+
+#controlButton {
+    padding-top: 10px;
+    border-top: 3px solid #286c7d;
+    display: none;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#controlButton > button {
+    width: 150px;
+}
+
+#closeAlert {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(71, 82, 94, 0.57);
+}
+
+#alertScore {
+    font-size: 4em;
+}
+
+#alert {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }

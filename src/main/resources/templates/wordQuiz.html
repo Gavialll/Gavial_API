@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +10,12 @@
     <link rel="manifest" th:href="@{/manifest.webmanifest}">
     <title>wordQuiz</title>
 </head>
-<body>️
+<body>
 <div id="alert">
     <div id="closeAlert"></div>
     <div class="alertBackground">
-        <h3 style="text-align: center; font-size: 3em">Result</h3>
-        <h3 style="font-size: 4em; text-align: center" id="alertScore">🏆 0</h3>
-
+        <h3>Result</h3>
+        <h3 id="alertScore">🏆 0</h3>
         <div class="wrrapperButton">
             <div class="button" id="menu">Menu 🏠</div>
             <div class="button" id="tryAgain">Try again 🔄</div>
@@ -39,6 +39,5 @@
 <script type="module" th:src="@{/js/module.js}" src="../static/js/module.js"></script>
 <script type="module" th:src="@{/js/wordQuiz.js}" src="../static/js/wordQuiz.js"></script>
 <script type="module" th:src="@{/js/menu.js}" src="../static/js/menu.js"></script>
-
 </body>
 </html>

@@ -15,12 +15,17 @@ function printButton(){
             return response.json()
         }
     }).then(words => {
+
         shuffle(words);
         document.getElementById("task").innerText = words[0].ukraine;
+
         control.englishWords = (words[0].english.trim() + " " + words[1].english.trim()).split(" ");
-        shuffle(control.englishWords);
         control.english = words[0].english.trim().split(" ");
         control.ukraine = words[0].ukraine;
+
+        shuffle(control.englishWords);
+
+        document.getElementById("task").innerText = "\"" + words[0].ukraine.toUpperCase() + "\"";
 
         let result = document.getElementById("result");
         let choose = document.getElementById("choose");
@@ -50,47 +55,67 @@ document.getElementById("choose").addEventListener("dragstart", (event) => {
 document.getElementById("result").addEventListener("dragover", (event) => {
     event.preventDefault();
 })
+
 document.getElementById('result').addEventListener("drop", (event) => {
-    console.log("end")
+
     const id = event.dataTransfer.getData('text');
     const result = document.getElementById("result");
     const draggableElement = document.getElementById(id);
     const dropZone = event.target;
+    let count = 0;
+    let resultArr = result.childNodes
+    let time = 250;
 
     if ("result" === dropZone.id) {
         dropZone.appendChild(draggableElement);
         event.dataTransfer.clearData();
 
-        let flag = false;
         if (result.childNodes.length === control.english.length) {
             for (let i = 0; i < control.english.length; i++) {
-                if (control.english[i] === result.childNodes[i].innerText) {
-                    flag = true;
+                if (control.english[i] === resultArr[i].innerText) {
+                    setTimeout(()=>{
+                        resultArr[i].style.boxShadow = "0 0 5px 1px rgb(0 255 0 / 57%)";
+                        resultArr[i].style.border = "solid 3px green";
+                        resultArr[i].style.transition = "1s";
+                    }, time)
+                    count++;
                 } else {
-                    flag = false;
-                    break
+                    setTimeout(()=>{
+                        resultArr[i].style.boxShadow = "0 0 5px 3px rgb(255 0 0 / 57%)";
+                        resultArr[i].style.border = "solid 3px red";
+                        resultArr[i].style.transition = "1s";
+                    }, time)
                 }
+                time += 250;
             }
-            if(flag) {
-                result.style.border = "solid 5px green"
-                control.score++;
-                document.getElementById("score").innerText = "🏆 " + control.score;
-                console.log("new question")
-                printButton();
+
+            if(count === control.english.length) {
+                setTimeout(()=>{
+                    control.score++;
+                    document.getElementById("score").innerText = "🏆 " + control.score;
+                    document.getElementById("controlButton").style.display = "flex"
+                }, time);
             }else {
-                result.style.border = "solid 5px red"
-                control.health--;
-                document.getElementById("health").innerText = control.health + " ❤️";
-                printButton();
-                if (control.health === 0) {
-                    document.getElementById("alertScore").innerText = "🏆 " + control.score;
-                    document.getElementById("alert").style.display = "flex";
-                }
+                setTimeout(()=>{
+                    control.health--;
+                    document.getElementById("next").style.border = "solid 3px red";
+                    document.getElementById("health").innerText = control.health + " ❤️";
+                    document.getElementById("controlButton").style.display = "flex"
+                    if (control.health === 0) {
+                        document.getElementById("alertScore").innerText = "🏆 " + control.score;
+                        document.getElementById("alert").style.display = "flex";
+                    }
+                }, time);
             }
         }
     }
 });
 
+document.getElementById("next").addEventListener('click', () => {
+    document.getElementById("next").style.border = "solid 3px green";
+    document.getElementById("controlButton").style.display = 'none'
+    printButton()
+})
 
 document.getElementById("result").addEventListener("dragstart", (event) => {
     event.dataTransfer.setData('text/plain', event.target.id);
@@ -99,6 +124,7 @@ document.getElementById("result").addEventListener("dragstart", (event) => {
 document.getElementById("choose").addEventListener("dragover", (event) => {
     event.preventDefault();
 })
+
 document.getElementById('choose').addEventListener("drop", (event) => {
     const id = event.dataTransfer.getData('text');
     const draggableElement = document.getElementById(id);
@@ -118,9 +144,14 @@ document.getElementById("menu")
     .addEventListener("click", () => {
         window.location.href = address('/index');
     })
+
+document.getElementById("menuOne")
+    .addEventListener("click", () => {
+        window.location.href = address('/index');
+    })
+
 document.getElementById('tryAgain')
     .addEventListener("click", () => {
-        document.getElementById("alert").style.display = "none";
         control = {
             score: 0,
             health: 3,
@@ -128,9 +159,11 @@ document.getElementById('tryAgain')
             ukraine: "",
             english: []
         };
-        let score = document.getElementById("score");
-        score.innerText = "🏆 " + control.score;
-        let health = document.getElementById("health");
-        health.innerText = control.health + " ❤️";
+        document.getElementById("next").style.border = "solid 3px green";
+        document.getElementById("controlButton").style.display = 'none'
+        document.getElementById("alert").style.display = "none";
+        document.getElementById("score").innerText = "🏆 " + control.score;
+        document.getElementById("health").innerText = control.health + " ❤️";
         printButton();
     })
+
