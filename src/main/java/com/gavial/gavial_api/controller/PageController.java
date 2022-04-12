@@ -36,6 +36,11 @@ public class PageController {
         return "chooseSentence";
     }
 
+    @GetMapping("/irregularVerbQuiz")
+    public String irregularVerbQuiz(){
+        return "irregularVerbQuiz";
+    }
+
     @GetMapping("/user")
     public String user(){
         return "user";

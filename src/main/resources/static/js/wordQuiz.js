@@ -10,30 +10,6 @@ let control = {
     health : 3
 }
 
-document.getElementById("menu")
-    .addEventListener("click", () => {
-        window.location.href = address('/index');
-})
-document.getElementById('tryAgain')
-    .addEventListener("click", () => {
-        document.getElementById("alert").style.display = "none";
-        control = {
-            one : "",
-            two : "",
-            flag : true,
-            count : 0,
-            sizeWords : 7,
-            score : 0,
-            health : 3
-        }
-        let score = document.getElementById("score");
-        score.innerText = "🏆 " + control.score;
-        let health = document.getElementById("health");
-        health.innerText = control.health + " ❤️";
-        printWords();
-})
-
-
 let array = [];
 let printWords = function () {
     let url = address("/api/getAll")
@@ -53,8 +29,8 @@ let printWords = function () {
         shuffle(arr);
         for (const arrElement of arr) {
             let button = document.createElement("button");
-            button.innerText = arrElement;
-            button.name = "false";
+                button.innerText = arrElement;
+                button.name = "false";
             document.querySelector("main").append(button);
         }
     })
@@ -66,8 +42,6 @@ addEventListener("click", (event) => {
     let buttonArr = document.querySelectorAll("button")
 
     if (control.flag) {
-        console.log("firs elem")
-        console.log(event)
         for (const buttonElement of buttonArr) {
             if (buttonElement.innerText === event.target.innerText) {
                 if (buttonElement.name === "true") {
@@ -80,8 +54,6 @@ addEventListener("click", (event) => {
             }
         }
     } else {
-        console.log("second elem")
-        // let words = array;
         for (const buttonElement of buttonArr) {
             if (buttonElement.innerText === event.target.innerText) {
                 if (buttonElement.name === "true") {
@@ -108,14 +80,11 @@ addEventListener("click", (event) => {
                         control.one.innerText === word.ukraine) {
                         control.flag = true
                         control.count++;
-                        console.log("Правильний вибір лишити зеленим")
                         control.one.name = "true";
                         control.two.name = "true";
 
-
                         control.score++;
-                        let score = document.getElementById("score");
-                        score.innerText = "🏆 " + control.score;
+                        document.getElementById("score").innerText = "🏆 " + control.score;
 
                         if (control.count === control.sizeWords) {
                             let main = document.querySelector("main");
@@ -132,15 +101,11 @@ addEventListener("click", (event) => {
                     }
                 }
 
-
                 control.health--;
-                let health = document.getElementById("health");
-                health.innerText = control.health + " ❤️";
-
+                document.getElementById("health").innerText = control.health + " ❤️";
 
                 control.one.style.boxShadow = "0 0 5px 1px rgb(255 0 0 / 57%)";
                 control.two.style.boxShadow = "0 0 5px 1px rgb(255 0 0 / 57%)";
-                console.log("Неправильний вибір верути до сірого кольору");
                 control.flag = true;
 
                 if(control.health === 0){
@@ -149,10 +114,9 @@ addEventListener("click", (event) => {
                         main.removeChild(main.firstChild);
                     }
                     document.getElementById("alertScore").innerText = "🏆 " + control.score;
+                    document.getElementById("alert").style.display = "flex";
 
                     //here save score in database if score > max result
-
-                    document.getElementById("alert").style.display = "flex";
                     return;
                 }
             }
@@ -160,9 +124,25 @@ addEventListener("click", (event) => {
     }
 })
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+document.getElementById('tryAgain').addEventListener("click", () => {
+    control = {
+        one : "",
+        two : "",
+        flag : true,
+        count : 0,
+        sizeWords : 7,
+        score : 0,
+        health : 3
+    }
+    document.getElementById("alert").style.display = "none";
+    document.getElementById("score").innerText = "🏆 " + control.score;
+    document.getElementById("health").innerText = control.health + " ❤️";
+    printWords();
+})
+
+document.getElementById("menu").addEventListener("click", () => {
+    window.location.href = address('/index');
+})
 
 function shuffle(array) {
     array.sort(() => Math.random() - 0.5);

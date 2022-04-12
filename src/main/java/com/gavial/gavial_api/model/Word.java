@@ -20,4 +20,5 @@ public class Word {
     private Long id;
     private String ukraine;
     private String english;
+    private String transcription;
 }

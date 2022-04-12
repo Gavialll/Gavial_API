@@ -1,0 +1,155 @@
+/*Alert**************************************/
+
+body {
+    position: relative;
+    padding-bottom: 55px;
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+}
+
+button:active {
+    box-shadow: 0 0 5px 1px #286c7d;
+}
+
+button {
+    width: 47%;
+    height: 60px;
+    color: #969faa;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #1C1D1E;
+    border: none;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: max-content;
+}
+
+main[class = 'main']>div>h2{
+    position: absolute;
+    left: 140px;
+    top: 15px;
+    color: #969faa;
+    display: none;
+}
+
+div[class = 'alertBackground'] > h3 {
+    margin-top: 20px;
+}
+
+main[class = 'main']>div>input[type = 'text']:focus {
+    background: #1C1D1E;
+    box-shadow: 0 0 5px 1px #286c7d;
+    border: solid 3px rgb(0 0 0 / 0%);
+}
+
+main[class = 'main']>div>input[type = 'text']{
+    height: 34px;
+    width: 100%;
+    border-radius: 15px;
+    outline:none;
+    background: #1C1D1E;
+    border: solid 3px rgb(0 0 0 / 0%);
+    padding: 10px 40px 10px 10px;
+    font-size: 20px;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+}
+
+main[class = 'main']>div>span{
+    font-size: 2em;
+    position: absolute;
+    top: 11px;
+    right: 10px;
+}
+
+.alertBackground {
+    z-index: 1;
+    position: absolute;
+    top: auto;
+    left: auto;
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1C1D1E;
+    border-radius: 10px;
+    width: 80%;
+    height: max-content;
+}
+
+.info {
+    font-size: 2em;
+}
+
+.wrrapperButton {
+    display: flex;
+    justify-content: space-between;
+}
+
+.topHeader {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
+}
+
+.wrapperInput{
+    border-radius: 15px;
+    margin-top: 20px;
+    display: flex;
+    position: relative;
+    transition: 1s;
+}
+
+.h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    color: #969faa;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #1C1D1E;
+    border: none;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
+}
+
+.wrrapperButton {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#closeAlert {
+    top: -20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(71, 82, 94, 0.57);
+}
+
+#alert {
+    z-index: 1;
+    display: none;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#verification{
+    transition: 1s;
+}

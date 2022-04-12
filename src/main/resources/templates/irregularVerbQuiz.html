@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
     <link rel="stylesheet" th:href="@{/style/screen.css}" href="../static/style/screen.css">
-    <link rel="stylesheet" th:href="@{/style/chooseSentence.css}" href="../static/style/chooseSentence.css">
+    <link rel="stylesheet" th:href="@{/style/irregularVerbQuiz.css}" href="../static/style/irregularVerbQuiz.css">
     <link rel="manifest" th:href="@{/manifest.webmanifest}">
 </head>
 
@@ -14,8 +14,8 @@
 <div id="alert">
     <div id="closeAlert"></div>
     <div class="alertBackground">
-        <h3>Result</h3>
-        <h3 id="alertScore">🏆 0</h3>
+        <h3 style="text-align: center; font-size: 3em">Result</h3>
+        <h3 style="font-size: 4em; text-align: center" id="alertScore">🏆 0</h3>
 
         <div class="wrrapperButton">
             <div class="button" id="menu">Menu 🏠</div>
@@ -27,26 +27,29 @@
         <div id="score" class="info">🏆 0</div>
         <div id="health" class="info">3 ❤️</div>
     </div>
-    <main>
-        <h3>Translate and arrange the words in the correct order 👆</h3>
-        <br>
-        <h3 id="task">"Працювати багато"</h3>
-        <br>
-        <div class="wrapper">
-            <div id="result" class="result"></div>
-            <div id="choose" class="choose">
-                    <button id="one" draggable="true">this</button>
-                    <button id="rt" draggable="true">girl</button>
-                    <button id="two" draggable="true">is</button>
-                    <button id="tswo" draggable="true">smart</button>
-            </div>
-            <div id="controlButton">
-                <button id="menuOne">Menu 🏠</button>
-                <button id="next">Next question 👆</button>
-            </div>
+    <main class="main">
+        <h3 style="text-align: center; margin-bottom: 20px; font-size: 2em">Irregular verb</h3>
+        <h3 class="h3" id="task"></h3>
+        <div class="wrapperInput">
+            <input placeholder="Present" type="text">
+            <span>✒️</span>
+            <h2></h2>
+        </div>
+        <div class="wrapperInput">
+            <input placeholder="Past" type="text">
+            <span>✒️</span>
+            <h2></h2>
+        </div>
+        <div class="wrapperInput">
+            <input placeholder="Future" type="text">
+            <span>✒️</span>
+            <h2></h2>
+        </div>
+        <div class="wrrapperButton">
+            <button id="clear">Clear fields</button>
+            <button id="verification">Verification</button>
         </div>
     </main>
-
 <header>
     <div class="menu">
         <img id="home" src="../static/image/home.svg" th:src="@{/image/home.svg}" alt="">
@@ -56,7 +59,7 @@
     </div>
 </header>
 <script type="module" th:src="@{/js/module.js}" src="../static/js/module.js"></script>
-<script type="module" th:src="@{/js/chooseSentence.js}" src="../static/js/chooseSentence.js"></script>
+<script type="module" th:src="@{/js/irregularVerbQuiz.js}" src="../static/js/irregularVerbQuiz.js"></script>
 <script type="module" th:src="@{/js/menu.js}" src="../static/js/menu.js"></script>
 </body>
 </html>

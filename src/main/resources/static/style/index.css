@@ -1,15 +1,9 @@
 
-
 button{
     padding: 0;
     border: none;
     font: inherit;
     color: inherit;
-}
-.logo{
-    text-align: center;
-    color: #969faa;
-    font-size: 2.5em;
 }
 
 button{
@@ -21,6 +15,7 @@ button{
     box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
     background-color: #1C1D1E;
 }
+
 button:active{
     box-shadow: 0 0 5px 1px #286c7d;
 }
@@ -30,4 +25,10 @@ main{
     min-height: max-content;
     justify-content: center;
     flex-direction: column;
+}
+
+.logo{
+    text-align: center;
+    color: #969faa;
+    font-size: 2.5em;
 }
