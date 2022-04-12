@@ -15,7 +15,9 @@ function printButton(){
             return response.json()
         }
     }).then(words => {
-        shuffle(words)
+
+        shuffle(words);
+        document.getElementById("task").innerText = words[0].ukraine;
 
         control.englishWords = (words[0].english.trim() + " " + words[1].english.trim()).split(" ");
         control.english = words[0].english.trim().split(" ");
