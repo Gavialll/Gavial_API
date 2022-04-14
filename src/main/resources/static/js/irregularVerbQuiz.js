@@ -7,6 +7,7 @@ let wrapperInputs = document.querySelectorAll(".wrapperInput");
 let alert = document.getElementById('alert');
 let score = document.getElementById("score");
 let health = document.getElementById("health");
+let h2 = document.querySelectorAll("h2");
 let irregularVerb = {
     id:0,
     past :"",
@@ -38,36 +39,47 @@ function printWord(){
 }
 
 function verificationAnswer(){
-    let h2 = document.querySelectorAll("h2");
-    let time = 200;
+    let time = 250;
     let count = 0;
-    if(inputs[0].value === irregularVerb.present){
-        time = styleInputs(time, 0,"0 0 5px 4px rgb(0 255 0 / 57%)")
+    if(inputs[0].value.trim().toLowerCase() === irregularVerb.present.trim().toLowerCase()){
+        time = styleInputs(time, 0,
+            "0 0 5px 4px rgb(0 255 0 / 57%)",
+            "#969faa",
+            "#969faa")
         count++;
     }else {
         h2[0].innerText = irregularVerb.present
-        h2[0].style.color = "green";
-        h2[0].style.display = 'flex';
-        time = styleInputs(time, 0,"0 0 5px 4px rgb(255 0 0 / 57%)")
+        time = styleInputs(time, 0,
+            "0 0 5px 4px rgb(255 0 0 / 57%)",
+            'rgba(64, 154, 3, 1)',
+            "red")
     }
-    if(inputs[1].value === irregularVerb.past){
-        time = styleInputs(time, 1, "0 0 5px 4px rgb(0 255 0 / 57%)")
+    if(inputs[1].value.trim().toLowerCase() === irregularVerb.past.trim().toLowerCase()){
+        time = styleInputs(time, 1,
+            "0 0 5px 4px rgb(0 255 0 / 57%)",
+            "#969faa",
+            "#969faa")
         count++;
     }
     else {
         h2[1].innerText = irregularVerb.past
-        h2[1].style.color = "green";
-        h2[1].style.display = 'flex';
-        time = styleInputs(time, 1,"0 0 5px 4px rgb(255 0 0 / 57%)")
+        time = styleInputs(time, 1,
+            "0 0 5px 4px rgb(255 0 0 / 57%)",
+            'rgba(64, 154, 3, 1)',
+            'red')
     }
-    if(inputs[2].value === irregularVerb.future){
-        time = styleInputs(time, 2, "0 0 5px 4px rgb(0 255 0 / 57%)")
+    if(inputs[2].value.trim().toLowerCase() === irregularVerb.future.trim().toLowerCase()){
+        time = styleInputs(time, 2,
+            "0 0 5px 4px rgb(0 255 0 / 57%)",
+            "#969faa",
+            "#969faa")
         count++;
     } else {
         h2[2].innerText = irregularVerb.future
-        h2[2].style.color = "green";
-        h2[2].style.display = 'flex';
-        time = styleInputs(time, 2,"0 0 5px 4px rgb(255 0 0 / 57%)")
+        time = styleInputs(time, 2,
+            "0 0 5px 4px rgb(255 0 0 / 57%)",
+            'rgba(64, 154, 3, 1)',
+            'red')
     }
 
     if (count ===  3) {
@@ -87,6 +99,9 @@ function verificationAnswer(){
             verification.style.boxShadow = '0 0 5px 4px rgb(255 0 0 / 57%)';
             verification.removeEventListener("click", verificationAnswer)
             verification.addEventListener("click", nextQuestion)
+            if(control.health === 0){
+                verification.innerText = "Menu";
+            }
         }, time );
     }
 }
@@ -99,11 +114,12 @@ function nextQuestion(){
     let h2 = document.querySelectorAll("h2");
     for (let i = 0; i < h2.length; i++) {
         h2[i].innerText = ""
-        h2[i].style.color = "green";
-        h2[i].style.display = 'none';
+        h2[i].style.color = 'rgba(64, 154, 3, 0)'
+        inputs[i].style.color = "#969faa"
     }
     if(control.health === 0){
         alert.style.display = "flex";
+        verification.innerText = "Menu";
         return;
     }
     clearFields()
@@ -112,11 +128,13 @@ function nextQuestion(){
 
 verification.addEventListener('click', verificationAnswer)
 
-function styleInputs(time, indexInput, styleBoxShadow){
+function styleInputs(time, indexInput, styleBoxShadow, textColor, inputColor){
     setTimeout(()=>{
+        h2[indexInput].style.color = textColor;
+        inputs[indexInput].style.color = inputColor;
         wrapperInputs[indexInput].style.boxShadow = styleBoxShadow
     }, time)
-    time += 200;
+    time += 250;
     return time;
 }
 
@@ -130,5 +148,22 @@ function clearFields(){
         inputs[i].value = "";
     }
 }
+
+document.getElementById('tryAgain').addEventListener("click", () => {
+    control = {
+        score: 0,
+        health: 3,
+    }
+    document.getElementById("alert").style.display = "none";
+    document.getElementById("score").innerText = "🏆 " + control.score;
+    document.getElementById("health").innerText = control.health + " ❤️";
+    nextQuestion();
+})
+
+document.getElementById("menu").addEventListener("click", () => {
+    window.location.href = address('/index');
+})
+
+
 
 printWord();
