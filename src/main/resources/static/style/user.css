@@ -41,7 +41,7 @@ div[class = 'alertBackground']>div:active{
 }
 
 #adminAlert{
-    display: flex;
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;

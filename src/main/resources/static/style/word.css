@@ -10,9 +10,9 @@ button{
 }
 
 button{
+    height: 50px;
     cursor: pointer;
     margin-top: 20px;
-    height: 50px;
     color: #969faa;
     border-radius: 15px;
     box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
@@ -90,13 +90,15 @@ div[class = 'search']>img{
 }
 
 .element{
+    cursor: pointer;
+    min-height: 50px;
+    height: max-content;
     position: relative;
     padding: 5px;
     margin-bottom: 10px;
     width: 45%;
     background-color: #1C1D1E;
     border-radius: 15px;
-    height: 50px;
     box-shadow: 0 0 5px 1px rgb(0 0 0 / 57%);
     display: flex;
     justify-content: space-around;

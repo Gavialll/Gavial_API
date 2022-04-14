@@ -153,6 +153,51 @@ function printWords(irregularVerb){
         wrapper.append(element);
 }
 
+let search = document.getElementById('search')
+search.addEventListener('keydown', e => {
+    console.log(e.code)
+    if (e.code === "Enter") {
+        document.querySelectorAll('.element').forEach(el => el.remove())
+        let url = address("/api/irregularVerb/getAll")
+        fetch(url).then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+        }).then(words => {
+            for (let word of words) {
+                if (word.future.includes(search.value.toString().toLowerCase().trim()) ||
+                    word.past.includes(search.value.toString().toLowerCase().trim()) ||
+                    word.present.includes(search.value.toString().toLowerCase().trim()) ||
+                    word.ukraine.includes(search.value.toString().toLowerCase().trim())) {
+                    printWords(word);
+                }
+            }
+        })
+    }
+});
+
+
+let send = document.getElementById('send');
+send.addEventListener('click', e => {
+    console.log("send")
+        document.querySelectorAll('.element').forEach(el => el.remove())
+        let url = address("/api/irregularVerb/getAll")
+        fetch(url).then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+        }).then(words => {
+            for (let word of words) {
+                if (word.future.includes(search.value.toString().toLowerCase().trim()) ||
+                    word.past.includes(search.value.toString().toLowerCase().trim()) ||
+                    word.present.includes(search.value.toString().toLowerCase().trim()) ||
+                    word.ukraine.includes(search.value.toString().toLowerCase().trim())) {
+                    printWords(word);
+                }
+            }
+        })
+});
+
 
 
 
