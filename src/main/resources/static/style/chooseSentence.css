@@ -1,5 +1,6 @@
 
 body {
+    overflow: hidden;
     background-color: #1C1D1E;
 }
 
@@ -131,8 +132,6 @@ h2 {
 }
 
 #controlButton {
-    padding-top: 10px;
-    border-top: 3px solid #286c7d;
     display: none;
     justify-content: space-evenly;
     margin-top: 10px;
