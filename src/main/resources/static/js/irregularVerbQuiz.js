@@ -138,9 +138,9 @@ function styleInputs(time, indexInput, styleBoxShadow, textColor, inputColor){
     return time;
 }
 
-clear.addEventListener('click', ()=>{
-    clearFields()
-})
+// clear.addEventListener('click', ()=>{
+//     clearFields()
+// })
 
 function clearFields(){
     for (let i = 0; i < inputs.length; i++) {
