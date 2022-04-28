@@ -1,4 +1,4 @@
-import {address} from "./module.js";
+import {address, upperFirstLetter} from "./module.js";
 
 let control = {
     score: 0,
@@ -17,8 +17,6 @@ function printButton(){
     }).then(words => {
 
         shuffle(words);
-        document.getElementById("choose").style.display = 'flex';
-        document.getElementById("task").innerText = words[0].ukraine;
 
         control.englishWords = (words[0].english.trim() + " " + words[1].english.trim()).split(" ");
         control.english = words[0].english.trim().split(" ");
@@ -26,7 +24,8 @@ function printButton(){
 
         shuffle(control.englishWords);
 
-        document.getElementById("task").innerText = "\"" + words[0].ukraine.toUpperCase() + "\"";
+        document.getElementById("choose").style.display = 'flex';
+        document.getElementById("task").innerText = "\"" + upperFirstLetter(words[0].ukraine) + "\"";
 
         let result = document.getElementById("result");
         let choose = document.getElementById("choose");
