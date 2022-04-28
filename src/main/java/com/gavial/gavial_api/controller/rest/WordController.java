@@ -107,8 +107,8 @@ public class WordController {
 
     @GetMapping("/getAll")
     public List<Word> getAll() {
-        System.out.println("get all words");
-        return wordService.getAll();
+        System.out.println("get random words");
+        return wordService.getTenRandomWords();
     }
 
     @PostMapping("/edit")

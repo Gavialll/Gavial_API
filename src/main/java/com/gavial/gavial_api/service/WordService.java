@@ -16,6 +16,10 @@ public class WordService {
         return wordRepository.findAll();
     }
 
+    public List<Word> getTenRandomWords(){
+        return wordRepository.getTenRandomWords();
+    }
+
     public Word edit(Word word){
         return wordRepository.save(word);
     }

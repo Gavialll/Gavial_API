@@ -1,6 +1,5 @@
-import {address} from "./module.js";
+import {address, upperFirstLetter} from "./module.js";
 
-let clear = document.getElementById("clear");
 let verification = document.getElementById("verification");
 let inputs = document.querySelectorAll('input')
 let wrapperInputs = document.querySelectorAll(".wrapperInput");
@@ -34,7 +33,8 @@ function printWord(){
     }).then(irregularVerbs => {
         shuffle(irregularVerbs);
         irregularVerb = irregularVerbs[0];
-        document.getElementById('task').innerText = irregularVerb.ukraine
+        console.log(upperFirstLetter(irregularVerb.ukraine))
+        document.getElementById('task').innerText = upperFirstLetter(irregularVerb.ukraine);
     });
 }
 
@@ -138,10 +138,6 @@ function styleInputs(time, indexInput, styleBoxShadow, textColor, inputColor){
     return time;
 }
 
-// clear.addEventListener('click', ()=>{
-//     clearFields()
-// })
-
 function clearFields(){
     for (let i = 0; i < inputs.length; i++) {
         wrapperInputs[i].style.boxShadow = "0 0 5px 1px rgb(0 0 0 / 57%)";
@@ -163,7 +159,5 @@ document.getElementById('tryAgain').addEventListener("click", () => {
 document.getElementById("menu").addEventListener("click", () => {
     window.location.href = address('/index');
 })
-
-
 
 printWord();
